@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unslop — AI Slop Detector & Cleaner</title>
+    <meta name="description" content="Paste any AI-generated text and instantly see how sloppy it is. Detects AI-isms, filler phrases, and robotic patterns. Free, open-source, runs in your browser.">
+    <meta property="og:title" content="unslop — How sloppy is your AI text?">
+    <meta property="og:description" content="Paste any text. Get a Slop Score. See every AI-ism highlighted. Free & open-source.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/danishashko/unslop/main/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-row">
+                <h1>un<span class="highlight">slop</span></h1>
+                <span class="badge">v1.0</span>
+            </div>
+            <p class="tagline">How sloppy is your AI text?</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea id="input-text" placeholder="Paste your AI-generated text here..."></textarea>
+                <div class="button-row">
+                    <button id="analyze-btn" class="btn btn-primary">Analyze</button>
+                    <button id="clean-btn" class="btn btn-secondary" title="Uses AI to rewrite without slop">Deep Clean</button>
+                    <button id="clear-btn" class="btn btn-ghost">Clear</button>
+                    <button id="example-btn" class="btn btn-ghost">Load Example</button>
+                </div>
+            </div>
+
+            <!-- Score Card -->
+            <div id="score-card" class="score-card hidden">
+                <div class="score-header">
+                    <div class="score-circle" id="score-circle">
+                        <span class="score-number" id="score-number">0</span>
+                        <span class="score-label">SLOP</span>
+                    </div>
+                    <div class="score-meta">
+                        <div class="score-verdict" id="score-verdict"></div>
+                        <div class="score-stats" id="score-stats"></div>
+                    </div>
+                    <button id="share-btn" class="btn btn-share" title="Copy shareable result">Share</button>
+                </div>
+
+                <!-- Breakdown -->
+                <div class="breakdown" id="breakdown">
+                    <h3>Breakdown</h3>
+                    <div class="breakdown-bars" id="breakdown-bars"></div>
+                </div>
+
+                <!-- Highlighted Text -->
+                <div class="highlighted-section">
+                    <div class="section-header">
+                        <h3>Detected Slop</h3>
+                        <span class="legend">
+                            <span class="legend-item"><span class="dot dot-phrase"></span> Slop phrase</span>
+                            <span class="legend-item"><span class="dot dot-structure"></span> Structure</span>
+                            <span class="legend-item"><span class="dot dot-hedge"></span> Hedge</span>
+                        </span>
+                    </div>
+                    <div id="highlighted-text" class="highlighted-text"></div>
+                </div>
+
+                <!-- Deep Clean Result -->
+                <div id="clean-result" class="clean-result hidden">
+                    <div class="section-header">
+                        <h3>Deep Cleaned</h3>
+                        <button id="copy-clean-btn" class="btn btn-ghost btn-small">Copy</button>
+                    </div>
+                    <div id="cleaned-text" class="cleaned-text"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/danishashko/unslop" target="_blank">GitHub</a>
+                &middot; Detection runs 100% in your browser
+                &middot; Deep Clean powered by <a href="https://openrouter.ai" target="_blank">OpenRouter</a>
+            </p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast hidden">Copied!</div>
+
+    <script src="slop-dictionary.js"></script>
+    <script src="analyzer.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
