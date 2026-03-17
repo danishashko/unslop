@@ -1,18 +1,16 @@
 # Handoff — unslop
-> Auto-generated on 2026-03-17 04:28 | Branch: master
+> Auto-generated on 2026-03-17 17:26 | Branch: master
 
 ## Recent Commits
-4342274 Major upgrade: expanded slop dictionary + strict LLM prompt
-41bd5f6 Clean up: remove debug endpoint and temp files
-f5dab7d Add debug query param to clean endpoint
-b2daa3c Add debug test endpoint
-84d4810 Simplify vercel.json — let Vercel auto-detect api/ and static files
+e8ebd1e Fix: LinkedIn link, GitHub Pages as repo homepage
+b98b739 Add README and credit footer
+d087ef6 unslop — AI Slop Detector & Cleaner
 
 ## Uncommitted Changes
-
+ 1 file changed, 6 insertions(+), 8 deletions(-)
 
 ### Modified Files
-
+HANDOFF.md
 
 ### Staged Files
 
