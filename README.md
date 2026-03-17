@@ -74,4 +74,4 @@ MIT
 
 ---
 
-Built by [Daniel Shashko](https://x.com/danishashko)
+Built by [Daniel Shashko](https://www.linkedin.com/in/daniel-shashko/)
